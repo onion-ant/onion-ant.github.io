@@ -1,0 +1,99 @@
+main {
+  display: flex;
+  justify-content: center;
+  background-color: #dfb654;
+  width: 100%;
+  height: 100%;
+}
+@font-face {
+  font-family: chique;
+  src: url(LibreBodoni-Bold.ttf);
+}
+html,
+body {
+  height: 100%;
+  font-family: chique;
+}
+#produto-detalhes {
+  width: 80%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding-left: 50px;
+  border-radius: 20px;
+  margin: 30px;
+}
+#produto-detalhes img {
+  width: 25%;
+  aspect-ratio: 16/16;
+  object-fit: contain;
+  padding-right: 50px;
+  border-radius: 10px;
+}
+#produto-detalhes span {
+  display: flex;
+  width: calc(75% - 100px);
+  padding-left: 50px;
+  padding-right: 10px;
+  height: 100%;
+  background-color: #181818;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0px 20px 20px 0px;
+  color: #f2f2f2;
+}
+.preco {
+  text-decoration: underline;
+  color: rgb(84, 84, 255);
+}
+.descricao {
+  color: #d0d0d0;
+}
+@media (max-width: 1161px) {
+  #produto-detalhes {
+    width: 70%;
+    flex-direction: column;
+    padding-left: 0;
+    height: 90%;
+  }
+  #produto-detalhes img {
+    height: 30%;
+    padding: 0;
+    border-radius: 0;
+  }
+  #produto-detalhes span {
+    height: 70%;
+    border-radius: 0px 0px 20px 20px;
+    padding-right: 50px;
+    width: calc(100% - 100px);
+  }
+}
+@media (max-width: 727px) {
+  #produto-detalhes {
+    width: 90%;
+  }
+  #produto-detalhes img {
+    width: 35%;
+  }
+}
+@media (max-width: 413px) {
+  #produto-detalhes {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  #produto-detalhes img {
+    width: 55%;
+    border-radius: 0;
+  }
+  #produto-detalhes span {
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+  #produto-detalhes span div {
+    padding: 20px;
+  }
+}
