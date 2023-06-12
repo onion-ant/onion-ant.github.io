@@ -32,6 +32,7 @@ fetch("https://fakestoreapi.com/products/")
     let botão = document.querySelector("#pesquisa-botão");
     let produts = document.querySelectorAll(".produto");
     let nãoEncontrado = document.querySelector("#non");
+    let cont = 0;
     pesquisa.addEventListener("input", function () {
       const valor = pesquisa.value;
       if (valor) {
@@ -44,10 +45,20 @@ fetch("https://fakestoreapi.com/products/")
               let filterText = pesquisa.value.toLowerCase();
 
               if (!titulo.includes(filterText)) {
+                cont++;
                 produto.classList.add("hide");
               } else {
                 produto.classList.remove("hide");
               }
+            }
+            if (cont == 14) {
+              nãoEncontrado.classList.remove("hide");
+              document.querySelector("#produtos").style.display = "none";
+              cont = 0;
+            } else {
+              nãoEncontrado.classList.add("hide");
+              document.querySelector("#produtos").style.display = "flex";
+              cont = 0;
             }
           }
         });
@@ -58,14 +69,27 @@ fetch("https://fakestoreapi.com/products/")
             let filterText = pesquisa.value.toLowerCase();
 
             if (!titulo.includes(filterText)) {
+              cont++;
               produto.classList.add("hide");
             } else {
               produto.classList.remove("hide");
             }
           }
+          if (cont == 14) {
+            nãoEncontrado.classList.remove("hide");
+            document.querySelector("#produtos").style.display = "none";
+            cont = 0;
+          } else {
+            nãoEncontrado.classList.add("hide");
+            document.querySelector("#produtos").style.display = "flex";
+            cont = 0;
+          }
         });
       } else {
         for (let produto of produts) {
+          nãoEncontrado.classList.add("hide");
+          document.querySelector("#produtos").style.display = "flex";
+          cont = 0;
           produto.classList.remove("hide");
         }
       }
